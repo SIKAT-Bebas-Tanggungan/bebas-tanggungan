@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /bebas-tanggungan/
+
+# Allow direct access to assets and views paths
+RewriteRule ^assets/ - [L]
+RewriteRule ^views/ - [L]
+
+# Redirect other requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA]
