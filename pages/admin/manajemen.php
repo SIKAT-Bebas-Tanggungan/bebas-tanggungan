@@ -34,41 +34,78 @@
 
   <div class="d-flex justify-content-end mt-4">
     <button class="btn btn-outline-info p-2" id="btn-add-user" style="border-radius: 20px;">
-      <a href="formTambahUser.php" style="text-decoration: none; color: black  ;"><img src="../../assets/icons/addUser.svg" alt="iconAddUser"> Tambah Pengguna</a>
-    </button>
+    <a id="add-user-link" href="#" style="text-decoration: none; color: black;">
+      <img src="../../assets/icons/addUser.svg" alt="iconAddUser"> Tambah Pengguna
+    </a>
+  </button>
   </div>
   <ul class="nav nav-tabs" id="userTabs">
-    <li class="nav-item">
-      <a class="nav-link border text-black" aria-current="page" href="#" data-tab="admin">Admin</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link border text-black" href="#" data-tab="mahasiswa">Mahasiswa</a>
-    </li>
-</ul> 
-<div class="table-responsive">
-<table class="table table-white align-middle w-100" id="adminTableBody" style="width: 100%;">
-  <thead>
-    <tr>  
-      <th class="fw-medium p-2">Nama</th>
-      <th class="fw-medium">Username</th>
-      <th class="fw-medium">Nomor Telepon</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Admin</td>
-      <td>Admin@admin</td>
-      <td>82134567900</td>
-      <td>
-        <a href="formEditUser.php"><button class="btn btn-info"><img src="../../assets/icons/editUser.svg" alt="Delete" /></button></a>
-        <button class="btn btn-danger"><img src="../../assets/icons/deleteUser.svg" alt="Edit" /></button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
+  <li class="nav-item">
+    <button class="nav-link border text-black active bg-primary text-white" data-tab="admin">
+      Admin
+    </button>
+  </li>
+  <li class="nav-item">
+    <button class="nav-link border text-black" data-tab="mahasiswa">
+      Mahasiswa
+    </button>
+  </li>
+</ul>
+
+<div id="content-admin" class="table-content" style="display: none;">
+  <div class="table-responsive">
+    <table class="table table-white align-middle w-100">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Username</th>
+          <th>Nomor Telepon</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Admin</td>
+          <td>Admin@admin</td>
+          <td>82134567900</td>
+          <td>
+            <a href="formEditAdm.php"><button class="btn btn-info"><img src="../../assets/icons/editUser.svg" alt="Delete" /></button></a>
+            <button class="btn btn-danger"><img src="../../assets/icons/deleteUser.svg" alt="Edit" /></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+</div>
+
+<div id="content-mahasiswa" class="table-content" style="display: none;">
+  <div class="table-responsive">
+    <table class="table table-white align-middle w-100">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>NIM</th>
+          <th>Prodi</th>
+          <th>Angkatan</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mahasiswa123</td>
+          <td>1234123123</td>
+          <td>D4 TI</td>
+          <td>2024</td>
+          <td>
+            <a href="formEditMhs.php"><button class="btn btn-info"><img src="../../assets/icons/editUser.svg" alt="Delete" /></button></a>
+            <button class="btn btn-danger"><img src="../../assets/icons/deleteUser.svg" alt="Edit" /></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 
   <!-- Footer -->
   <?php include('../components/admin/footer.php') ?>
@@ -79,8 +116,7 @@
     crossorigin="anonymous"></script>
     
   <!--js Tabs Table-->
-  <script src="../../assets/js/admin/navTabs.js"></script>
-  
+  <script src="../../assets/js/admin/tabsHandler.js"></script>  
 </body>
 
 </html>

@@ -31,25 +31,25 @@
 
   <div class="row mt-4">
     <div class="col-md-3">
-      <div class="card text-start bg-primary text-white p-3">
+      <div class="card text-start bg-primary text-white p-3 h-100">
         <h5 class="fs-5 fw-light">Total Jumlah Tanggungan</h5>
         <h2>20</h2>
       </div>
     </div>
     <div class="col-md-3">
-      <div class="card text-start bg-primary text-white p-3">
+      <div class="card text-start bg-primary text-white p-3 h-100">
         <h5 class="fs-5 fw-light">Tanggungan yang belum diselesaikan</h5>
         <h2>5</h2>
       </div>
     </div>
     <div class="col-md-3">
-      <div class="card text-start bg-primary text-white p-3">
+      <div class="card text-start bg-primary text-white p-3 h-100">
         <h5 class="fs-5 fw-light">Tanggungan yang sudah diselesaikan</h5>
         <h2>10</h2>
       </div>
     </div>
     <div class="col-md-3">
-      <div class="card text-start bg-primary text-white p-3">
+      <div class="card text-start bg-primary text-white p-3 h-100">
         <h5 class="fs-5 fw-light">Tanggungan saat ini</h5>
         <h2>5</h2>
       </div>

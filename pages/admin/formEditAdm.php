@@ -28,7 +28,7 @@
             <button class="btn btn-white me-4 border border-0 p-2 mb-2 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; transform: rotate(90deg);">
                 <a onclick="goBack()"><img src="../../assets/icons/arrowToggleFAQ.svg" alt="Toggle FAQ" style="width: 24px; height: 24px;"></a>
               </button>
-            <h3>Tambah Pengguna</h3>
+            <h3>Edit Pengguna</h3>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
             <button class="btn btn-danger" type="button">< Keluar</button>
@@ -36,7 +36,6 @@
     </div>
 
     <div class="container mt-3">
-      
         <!-- Card Content -->
         <!-- Card Form Create Admin -->
         <div class="card p-4 border-0 shadow-sm card-form   " id="formCreateAdm" style="border-radius: 10px; margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;">
@@ -66,56 +65,11 @@
               </div>
             </div>
             <div class="d-flex justify-content-end">
-                <button type="button" id="addAdmButton" class="btn btn-info text-white fw-bold px-4 rounded-3" style="width: 150px;">Tambah</button>
+                <button type="button" id="addAdmButton" class="btn btn-info text-white fw-bold px-4 rounded-3" style="width: 150px;">Edit</button>
               </div>
           </form>
         </div>
-        
-        <!--Card Form Create Mahasiswa-->
-        <div class="card p-4 border-0 shadow-sm card-form" id="formCreateMhs" style="border-radius: 10px; margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;">
-            <form>
-              <div class="row mb-4 align-items-center">
-                <label for="name" class="col-sm-3 col-form-label fw-semibold">Nama:</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control rounded-pill px-3 py-2" id="name" placeholder="Nama">
-                </div>
-              </div>
-              <div class="row mb-4 align-items-center">
-                <label for="username" class="col-sm-3 col-form-label fw-semibold">NIM:</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control rounded-pill px-3 py-2" id="username" placeholder="Username">
-                </div>
-              </div>
-              <div class="row mb-4 align-items-center">
-                <label for="password" class="col-sm-3 col-form-label fw-semibold">Tanggal Lahir:</label>
-                <div class="col-sm-9">
-                  <input type="password" class="form-control rounded-pill px-3 py-2" id="password" placeholder="Password">
-                </div>
-              </div>
-              <div class="row mb-4 align-items-center">
-                <label for="phone" class="col-sm-3 col-form-label fw-semibold">Prodi:</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control rounded-pill px-3 py-2" id="phone" placeholder="Nomor Telepon">
-                </div>
-              </div>  <div class="row mb-4 align-items-center">
-                <label for="phone" class="col-sm-3 col-form-label fw-semibold">Prodi:</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control rounded-pill px-3 py-2" id="phone" placeholder="Nomor Telepon">
-                </div>
-              </div>  <div class="row mb-4 align-items-center">
-                <label for="phone" class="col-sm-3 col-form-label fw-semibold">Angkatan:</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control rounded-pill px-3 py-2" id="phone" placeholder="Nomor Telepon">
-                </div>
-              </div>
-              <div class="d-flex justify-content-end">
-                <button type="button" id="addMhsButton" class="btn btn-info text-white fw-bold px-4 rounded-3" style="width: 150px;">Tambah</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
+  
   <!-- Footer -->
   <?php include('../components/admin/footer.php') ?>
 

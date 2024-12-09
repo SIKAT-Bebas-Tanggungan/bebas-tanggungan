@@ -16,13 +16,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
     </li>
     <li>
       <a href="manajemen.php" 
-         class="nav-link p-2 rounded mt-4 <?php echo $current_page == 'manajemen.php' ? 'active' : ''; ?>">
+         class="nav-link p-2 rounded mt-4 <?php echo ($current_page == 'manajemen.php' || $current_page == 'formTambahAdm.php' || $current_page == 'formTambahMhs.php' || $current_page == 'formEditAdm.php' || $current_page == 'formEditMhs.php') ? 'active' : ''; ?>">
          Manajemen Pengguna
       </a>
     </li>
     <li>
-      <a href="kelola.php" 
-         class="nav-link p-2 rounded mt-4 <?php echo $current_page == 'kelola.php' ? 'active' : ''; ?>">
+      <a href="kelola.php" class="nav-link p-2 rounded mt-4 <?php echo ($current_page == 'kelola.php' || $current_page == 'tablePageD2PPLS.php' || $current_page == 'tablePageD4SIB.php' || $current_page == 'tablePageD4TI.php') ? 'active' : ''; ?>">
          Kelola Tanggungan
       </a>
     </li>
