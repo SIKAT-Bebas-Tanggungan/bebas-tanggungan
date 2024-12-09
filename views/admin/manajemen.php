@@ -69,8 +69,8 @@
           <td>Admin@admin</td>
           <td>82134567900</td>
           <td>
-            <a href="formEditAdm.php"><button class="btn btn-info"><img src="../../assets/icons/editUser.svg" alt="Delete" /></button></a>
-            <button class="btn btn-danger"><img src="../../assets/icons/deleteUser.svg" alt="Edit" /></button>
+            <a href="formEditAdm.php"><button class="btn btn-info"><img src="../assets/icons/editUser.svg" alt="Delete" /></button></a>
+            <button class="btn btn-danger"><img src="../assets/icons/deleteUser.svg" alt="Edit" /></button>
           </td>
         </tr>
       </tbody>
@@ -97,8 +97,8 @@
           <td>D4 TI</td>
           <td>2024</td>
           <td>
-            <a href="formEditMhs.php"><button class="btn btn-info"><img src="../../assets/icons/editUser.svg" alt="Delete" /></button></a>
-            <button class="btn btn-danger"><img src="../../assets/icons/deleteUser.svg" alt="Edit" /></button>
+            <a href="formEditMhs.php"><button class="btn btn-info"><img src="../assets/icons/editUser.svg" alt="Delete" /></button></a>
+            <button class="btn btn-danger"><img src="../assets/icons/deleteUser.svg" alt="Edit" /></button>
           </td>
         </tr>
       </tbody>

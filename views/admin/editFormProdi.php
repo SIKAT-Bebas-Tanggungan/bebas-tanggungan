@@ -25,7 +25,7 @@
  <div id="mainPage" style="margin-left: 300px; padding: 60px 20px;">
   <div class="d-flex justify-content-start align-items-center mb-4">
     <button class="btn btn-white me-4 mb-2 border border-0" style="width: 50px; height: 50px; transform: rotate(90deg);">
-      <a onclick="goBack()"><img src="../../assets/icons/arrowToggleFAQ.svg" alt="Toggle FAQ" style="width: 24px; height: 24px;"></a>
+      <a onclick="goBack()"><img src="../assets/icons/arrowToggleFAQ.svg" alt="Toggle FAQ" style="width: 24px; height: 24px;"></a>
     </button>
     <h3>Edit Form</h3>
     <button class="btn btn-danger ms-auto" type="button">< Keluar</button>
