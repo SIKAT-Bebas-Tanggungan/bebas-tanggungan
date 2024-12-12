@@ -1,0 +1,22 @@
+.navbar {
+    height: 101px;
+    border: 1px;
+    border-color: #000 opacity 10%;
+    border-radius: 10px;
+  }
+.nav-logo {
+    font-weight: 700;
+    color: #000;
+    padding-left: 20px;
+  }
+.nav-logo span {
+    color: #ffa500;
+  }
+.nav-link {
+    color: black; 
+}
+.nav-link:hover {
+    color: #FA9D1C; 
+}
+
+
