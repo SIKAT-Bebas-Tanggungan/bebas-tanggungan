@@ -2,22 +2,17 @@
 require_once 'controllers/AdminController.php';
 require_once 'controllers/MahasiswaController.php';
 
-// Instantiate controllers
 $adminController = new AdminController();
 $mahasiswaController = new MahasiswaController();
 
-// Get the request URI and remove the base path
 $requestUri = $_SERVER['REQUEST_URI'];
 $basePath = '/bebas-tanggungan';
 $uri = str_replace($basePath, '', $requestUri);
 
-// Trim and remove query strings
 $uri = strtok(trim($uri, '/'), '?');
 
-// Split the URI into segments
 $uriSegments = explode('/', $uri);
 
-// Determine the base route
 $baseRoute = $uriSegments[0] ?? '';
 
 switch ($baseRoute) {
@@ -40,29 +35,44 @@ switch ($baseRoute) {
             case 'manajemen':
                 $subAction = $uriSegments[2] ?? '';
 
-                // Check if an action exists
                 if (!empty($subAction)) {
-                    $adminId = $uriSegments[3] ?? null; // Get the adminId if it exists
-
+                    $id = $uriSegments[3] ?? null;
                     switch ($subAction) {
-                        case 'edit-user':
-                            if (!empty($adminId)) {
-                                $adminController->editAdmin($adminId);
+                        // case'tambah-
+
+                        case 'edit-admin':
+                            if (!empty($id)) {
+                                $adminController->editAdmin($id);
                             } else {
-                                echo "Invalid or missing user ID for edit-user.";
+                                require_once 'views/404Page.php';
                             }
                             break;
 
-                        case 'delete-user':
-                            if (!empty($adminId)) {
-                                $adminController->deleteAdmin($adminId);
+                        case 'delete-admin':
+                            if (!empty($id)) {
+                                $adminController->deleteAdmin($id);
                             } else {
-                                echo "Invalid or missing user ID for delete-user.";
+                                require_once 'views/404Page.php';
+                            }
+                            break;
+                        case 'edit-mahasiswa':
+                            if (!empty($id)) {
+                                $adminController->editMahasiswa($id);
+                            } else {
+                                require_once 'views/404Page.php';
+                            }
+                            break;
+
+                        case 'delete-mahasiswa':
+                            if (!empty($id)) {
+                                $adminController->deleteMahasiswa($id);
+                            } else {
+                                require_once 'views/404Page.php';
                             }
                             break;
 
                         default:
-                            echo "Invalid sub-action for manajemen.";
+                            require_once 'views/404Page.php';
                             break;
                     }
                 } else {
@@ -103,7 +113,7 @@ switch ($baseRoute) {
                             break;
 
                         default:
-                            echo "Invalid sub-action for kelola.";
+                            require_once 'views/404Page.php';
                             break;
                     }
                 } else {
@@ -113,6 +123,10 @@ switch ($baseRoute) {
                 break;
             case 'edit-form':
                 $adminController->editForm();
+                break;
+
+            default:
+                require_once 'views/404Page.php';
                 break;
         }
         break;
@@ -137,13 +151,17 @@ switch ($baseRoute) {
                 $mahasiswaController->editProfile();
                 break;
 
+            case 'status':
+                $mahasiswaController->bebasTanggungan();
+                break;
+                
             default:
-                header("Location: /PBL/mahasiswa");
-                exit;
+                require_once 'views/404Page.php';
+                break;
         }
         break;
 
-        // default:
-        //     echo "Page not found.";
-        //     break;
+    default:
+        require_once 'views/404Page.php';
+        break;
 }

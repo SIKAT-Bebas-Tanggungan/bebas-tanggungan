@@ -27,8 +27,8 @@
 
   <!-- Main Content -->
   <div class="container my-5">
-    <h2 class="section-title fs-3 fw-bold mb-4">Unggah <span class="berkas">Berkas</span></h2>
-
+    <h2 class="section-title fs-3 fw-bold mb-4">Unggah <span style="color: #FA9D1C">Berkas</span></h2>
+    
     <!-- Card Utama: Semua Form -->
     <div class="card p-4 shadow-sm mb-4">
       <div class="d-grid gap-2 d-md-block">

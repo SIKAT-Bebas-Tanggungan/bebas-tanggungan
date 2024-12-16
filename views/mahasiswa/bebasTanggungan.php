@@ -30,10 +30,10 @@
     <h2 class="section-title fs-3 fw-bold mb-4">Status <span class="berkas">Bebas Tanggungan</span></h2>
     <a onclick="goBack()" class="btn btn-outline-secondary mb-3 d-inline-block me-2">
       < Kembali</a>
-        <p class="mb-1 fs-4">Hai, <span class="fw-medium">MAHASISWA 123!</span></p>
+        <p class="mb-1 fs-4">Hai, <span class="fw-medium"><?php echo ($mahasiswa['nama_mahasiswa']); ?></span></p>
         <hr />
-        <p>NIM: <strong>1231231234</strong></p>
-        <p>Program Studi: <strong>D-IV Teknik Informatika</strong></p>
+        <p>NIM: <strong><?php echo ($mahasiswa['nim']); ?></strong></p>
+        <p>Program Studi: <strong><?php echo ($mahasiswa['prodi']); ?></strong></p>
         <p>Jurusan: <strong>TEKNOLOGI INFORMASI</strong></p>
         <hr />
 

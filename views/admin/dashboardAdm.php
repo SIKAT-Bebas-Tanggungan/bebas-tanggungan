@@ -24,7 +24,7 @@
   <!-- Main Content -->
   <div class="content" style="margin-left: 300px; padding: 60px 20px;">
     <div class="d-flex justify-content-between align-items-center">
-      <h1>Hai, <span class="text-primary">ADMIN 123</span>!</h1>
+      <h1>Hai, <span class="text-primary"><?php echo($admin['nama_admin']); ?></span>!</h1>
       <a href="http://localhost/bebas-tanggungan/admin/logout" class="btn btn-danger" type="button">
         < Keluar</a>
     </div>
@@ -32,25 +32,25 @@
 
     <div class="row mt-4">
       <div class="col-md-3">
-        <div class="card text-start bg-primary text-white p-3">
+        <div class="card text-start bg-primary text-white p-3 h-100">
           <h5 class="fs-5 fw-light">Total Jumlah Tanggungan</h5>
           <h2>20</h2>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card text-start bg-primary text-white p-3">
+        <div class="card text-start bg-primary text-white p-3 h-100">
           <h5 class="fs-5 fw-light">Tanggungan yang belum diselesaikan</h5>
           <h2>5</h2>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card text-start bg-primary text-white p-3">
+        <div class="card text-start bg-primary text-white p-3 h-100">
           <h5 class="fs-5 fw-light">Tanggungan yang sudah diselesaikan</h5>
           <h2>10</h2>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="card text-start bg-primary text-white p-3">
+        <div class="card text-start bg-primary text-white p-3 h-100">
           <h5 class="fs-5 fw-light">Tanggungan saat ini</h5>
           <h2>5</h2>
         </div>

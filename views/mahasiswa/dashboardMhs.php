@@ -36,7 +36,7 @@
       <div class="d-flex flex-row gap-3">
         <a href="unduhFormAlur.php" class="btn btn-outline-primary flex-fill">Unduh Form dan Alur</a>
         <a href="unggahTA.php" class="btn btn-outline-primary flex-fill">Unggah Tugas Akhir dan Form</a>
-        <a href="bebasTanggungan.php" class="btn btn-outline-primary flex-fill">Bebas Tanggungan</a>
+        <a href="http://localhost/bebas-tanggungan/mahasiswa/status" class="btn btn-outline-primary flex-fill">Bebas Tanggungan</a>
         <a href="hubungiAdmin.php" class="btn btn-outline-primary flex-fill">Kendala Melalui Whatsapp</a>
       </div>
     </div>

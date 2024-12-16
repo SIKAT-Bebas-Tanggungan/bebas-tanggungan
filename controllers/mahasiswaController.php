@@ -77,4 +77,14 @@ class MahasiswaController
             require_once 'views/mahasiswa/editProfileMhs.php';
         }
     }
+
+    public function bebasTanggungan()
+    {
+        ensureMahasiswaAuthenticated();
+        
+        $nim = $_SESSION['nim'];
+        $mahasiswa = $this->mahasiswaModel->readMahasiswaByNim($nim);
+        
+        require_once 'views/mahasiswa/bebasTanggungan.php';
+    }
 }

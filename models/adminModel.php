@@ -46,15 +46,14 @@ class AdminModel
         }
     }
 
-    public function readAdmin($id_admin)
+    public function readAdminById($id_admin)
     {
         try {
             $query = "SELECT * FROM admin WHERE id_admin = :id_admin";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_admin', $id_admin);
             $stmt->execute();
-            $admin = $stmt->fetch();
-            return $admin ? ['success' => true, 'data' => $admin] : ['success' => false, 'message' => 'Admin not found.'];
+            return $stmt->fetch();;
         } catch (PDOException $e) {
             return ['success' => false, 'message' => $e->getMessage()];
         }

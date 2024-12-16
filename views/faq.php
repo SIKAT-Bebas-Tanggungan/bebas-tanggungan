@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,15 +10,14 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-  />
+    crossorigin="anonymous" />
   <!-- Font Poppins -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="../assets/css/styleIndex.css">
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styleIndex.css">
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow">
@@ -25,25 +25,23 @@
       <div class="d-flex align-items-center">
         <a href="../index.php" class="d-flex align-items-center text-decoration-none">
           <img
-            src="../assets/icons/backToTop.svg"
+            src="assets/icons/backToTop.svg"
             alt="icon"
             width="50"
             height="50"
             class="me-2"
-            style="transform: rotate(-90deg);"
-          />
+            style="transform: rotate(-90deg);" />
           <img
-            src="../assets/images/logoSikatBata.svg"
+            src="assets/images/logoSikatBata.svg"
             alt="icon"
             width="50"
             height="50"
-            class="me-2"
-          />
+            class="me-2" />
         </a>
         <span class="sikat-bata fw-bold fs-4 ms-2">
-            <span class="sikat">SIKAT-</span>
-            <span class="bata">BATA</span>
-          </span>
+          <span class="sikat">SIKAT-</span>
+          <span class="bata">BATA</span>
+        </span>
       </div>
     </div>
   </nav>
@@ -59,7 +57,7 @@
         <div class="d-flex justify-content-between align-items-center border border-black rounded mt-2">
           <span class="p-3 fw-medium">Apa itu Sistem Kelola Bebas Tanggungan?</span>
           <button class="btn me-3 toggle-btn">
-            <img src="../assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
+            <img src="assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
           </button>
         </div>
         <div class="dropdown-content" style="display: none;">
@@ -70,7 +68,7 @@
         <div class="d-flex justify-content-between align-items-center border border-black rounded mt-2">
           <span class="p-3 fw-medium">Bagaimana cara mahasiswa mengecek status tanggungan mereka?</span>
           <button class="btn me-3 toggle-btn">
-            <img src="../assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
+            <img src="assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
           </button>
         </div>
         <div class="dropdown-content" style="display: none;">
@@ -83,7 +81,7 @@
         <div class="d-flex justify-content-between align-items-center border border-black rounded mt-2">
           <span class="p-3 fw-medium">Siapa saja yang berhak menggunakan sistem ini?</span>
           <button class="btn me-3 toggle-btn">
-            <img src="../assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
+            <img src="http://localhost/bebas-tanggungan/views/assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
           </button>
         </div>
         <div class="dropdown-content" style="display: none;">
@@ -94,7 +92,7 @@
         <div class="d-flex justify-content-between align-items-center border border-black rounded mt-2">
           <span class="p-3 fw-medium">Apa yang harus dilakukan jika ada status tanggungan yang belum selesai?</span>
           <button class="btn me-3 toggle-btn">
-            <img src="../assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
+            <img src="http://localhost/bebas-tanggungan/views/assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
           </button>
         </div>
         <div class="dropdown-content" style="display: none;">
@@ -110,40 +108,22 @@
   </main>
 
   <!-- Footer -->
-    <footer class="bg-white border-top py-3 mt-4">
+  <footer class="bg-white border-top py-3 mt-4">
     <div class="container text-center">
       <p class="mb-0">
         © Copyright <span class="text-kelompok-enam">Kelompok Enam</span>. All
         Rights Reserved
       </p>
-      <small
-        >Made by <span class="text-kelompok-enem">Kelompok Enem</span></small
-      >
+      <small>Made by <span class="text-kelompok-enem">Kelompok Enem</span></small>
     </div>
   </footer>
 
-  <script>
-    const toggleBtns = document.querySelectorAll('.toggle-btn');
-
-// Add event listener to each toggle button
-toggleBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Toggle the display of the corresponding dropdown content
-    const dropdownContent = btn.parentNode.nextElementSibling;
-    if (dropdownContent.style.display === 'none') {
-      dropdownContent.style.display = 'block';
-    } else {
-      dropdownContent.style.display = 'none';
-    }
-  });
-});
-  </script>
   <!-- Bootstrap JS -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
-  
+    crossorigin="anonymous"></script>
+  <script src="assets/js/faq.js"></script>
 </body>
+
 </html>

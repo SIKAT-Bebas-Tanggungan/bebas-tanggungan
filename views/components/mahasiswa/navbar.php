@@ -10,7 +10,7 @@
     <a href="http://localhost/bebas-tanggungan/mahasiswa/edit-profile" class="me-4">
       <img src="http://localhost/bebas-tanggungan/views/assets/icons/profile.svg" alt="">
     </a>
-    <a href="#" class="me-5">
+    <a href="http://localhost/bebas-tanggungan/mahasiswa/logout" class="me-5">
       <img src="http://localhost/bebas-tanggungan/views/assets/icons/logout.svg" alt="">
     </a>
   </nav>

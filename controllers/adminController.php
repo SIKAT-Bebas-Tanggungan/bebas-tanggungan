@@ -55,9 +55,8 @@ class AdminController
     {
         ensureAdminAuthenticated();
 
-        $username = $_SESSION['id_admin'];
-        $dashboardData = $this->adminModel->readAdmin($username);
-        $dashboardData = ['name' => 'fawwaz'];
+        $adminId = $_SESSION['id_admin'];
+        $admin = $this->adminModel->readAdminById($adminId);
 
         require_once 'views/admin/dashboardAdm.php';
     }
@@ -76,14 +75,48 @@ class AdminController
     {
         ensureAdminAuthenticated();
 
-        // $adminData = $this->adminModel->updateAdmin($adminId);
+        $admin = $this->adminModel->readAdminById($adminId);
 
-        // if (!$adminData) {
-        //     echo "Admin not found.";
-        //     return;
-        // }
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $nama_admin = htmlspecialchars(trim($_POST['nama_admin']));
+            $username = htmlspecialchars(trim($_POST['username']));
+            $no_telp = htmlspecialchars(trim($_POST['no_telp']));
 
-        require_once 'views/admin/formEditUser.php';
+            $result = $this->adminModel->updateAdmin($adminId, $nama_admin, $username, $no_telp);
+            header("Location: http://localhost/bebas-tanggungan/admin/manajemen/edit-admin/".$adminId);
+            exit();
+        } else {
+            require_once 'views/admin/formEditAdm.php';
+        }
+    }
+
+    public function deleteMahasiswa($nim)
+    {
+        ensureAdminAuthenticated();
+
+        $this->mahasiswaModel->deleteMahasiswa($nim);
+        header("Location: http://localhost/bebas-tanggungan/admin/manajemen");
+    }
+
+    public function editMahasiswa($nim)
+    {
+        ensureAdminAuthenticated();
+
+        $mahasiswa = $this->mahasiswaModel->readMahasiswaByNim($nim);
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $role = $_SESSION['role'];
+            $nama_mahasiswa = htmlspecialchars(trim($_POST['nama_mahasiswa']));
+            $password = htmlspecialchars(trim($_POST['password']));
+            $angkatan = htmlspecialchars(trim($_POST['angkatan']));
+            $prodi = htmlspecialchars(trim($_POST['prodi']));
+
+            $result = $this->mahasiswaModel->updateMahasiswa($role, $nim, $nama_mahasiswa, $prodi, $password, $angkatan);
+            header("Location: http://localhost/bebas-tanggungan/admin/manajemen/edit-mahasiswa/".$nim);
+            exit();
+        } else {
+            require_once 'views/admin/formEditMhs.php';
+        }
     }
 
     public function deleteAdmin($adminId)
