@@ -27,7 +27,7 @@
     <button class="btn btn-white me-4 mb-2 border border-0" style="width: 50px; height: 50px; transform: rotate(90deg);">
       <a onclick="goBack()"><img src="../assets/icons/arrowToggleFAQ.svg" alt="Toggle FAQ" style="width: 24px; height: 24px;"></a>
     </button>
-    <h3>Edit Form</h3>
+    <h3>Edit Berkas</h3>
     <button class="btn btn-danger ms-auto" type="button">< Keluar</button>
   </div>
 
@@ -36,18 +36,18 @@
   <div class="card">
     <div class="list-group d-flex-column justify-content-start p-3">
   <div class="list-group d-flex flex-wrap gap-2">
-    <a href="editDetailFormD2PPLS.php">
+    <a href="editDetailBerkasD2PPLS.php">
     <button type="button" class="btn btn-light text-black border-secondary list-group-item-action">
       DIII Pengembangan (Piranti) Perangkat Lunak Situs
     </button>
     </a>
-    <a href="editDetailFormD4TI.php">
-    <button type="button" class="btn btn-light text-black border-secondary list-group-item-action mt-3" onclick="showTable('D-IV Teknik Informatika')">
+    <a href="editDetailBerkasD4TI.php">
+    <button type="button" class="btn btn-light text-black border-secondary list-group-item-action mt-3">
       D-IV Teknik Informatika
     </button>
     </a>
-    <a href="editDetailFormD4SIB.php">
-    <button type="button" class="btn btn-light text-black border-secondary list-group-item-action mt-3" onclick="showTable('D-IV Sistem Informasi Bisnis')">
+    <a href="editDetailBerkasD4SIB.php">
+    <button type="button" class="btn btn-light text-black border-secondary list-group-item-action mt-3">
       D-IV Sistem Informasi Bisnis
     </button>
   </a>
