@@ -70,6 +70,14 @@ switch ($baseRoute) {
                                 require_once 'views/404Page.php';
                             }
                             break;
+                        
+                        case 'tambah-admin':
+                            $adminController->tambahAdmin();
+                            break;
+                        
+                        case 'tambah-mahasiswa':
+                            $adminController->tambahMahasiswa();
+                            break;
 
                         default:
                             require_once 'views/404Page.php';
@@ -77,10 +85,9 @@ switch ($baseRoute) {
                     }
                 } else {
                     $adminController->manajemen();
+                    break;
                 }
                 break;
-
-
             case 'kelola':
                 $subAction = $uriSegments[2] ?? '';
 
@@ -155,6 +162,12 @@ switch ($baseRoute) {
                 $mahasiswaController->bebasTanggungan();
                 break;
                 
+            case 'unggah-ta':
+                $mahasiswaController->unggahTanggungan();
+                break;
+
+            case 'unduh-form':
+                $mahasiswaController->unduhForm();
             default:
                 require_once 'views/404Page.php';
                 break;

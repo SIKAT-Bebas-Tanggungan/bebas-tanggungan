@@ -15,15 +15,15 @@ class MahasiswaModel
         return getPDOConnection();
     }
 
-    public function createMahasiswa($nim, $nama, $id_prodi, $angkatan)
+    public function createMahasiswa($nim, $nama_mahasiswa, $prodi, $angkatan)
     {
         try {
-            $query = "INSERT INTO mahasiswa (nim, nama, id_prodi, password, angkatan) 
-                      VALUES (:nim, :nama, :id_prodi, :password, :angkatan)";
+            $query = "INSERT INTO mahasiswa (nim, nama_mahasiswa, prodi, password, angkatan) 
+                      VALUES (:nim, :nama_mahasiswa, :prodi, :password, :angkatan)";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nim', $nim);
-            $stmt->bindParam(':nama', $nama);
-            $stmt->bindParam(':id_prodi', $id_prodi);
+            $stmt->bindParam(':nama_mahasiswa', $nama_mahasiswa);
+            $stmt->bindParam(':prodi', $prodi);
             $stmt->bindParam(':password', $nim); // Default password is NIM
             $stmt->bindParam(':angkatan', $angkatan);
             $stmt->execute();
@@ -143,6 +143,7 @@ class MahasiswaModel
                 if ($result['password'] === $password) {
                     $_SESSION['nim'] = $nim;
                     $_SESSION['role'] = 'mahasiswa';
+                    $_SESSION['prodi'] = $result['prodi'];
                     header("Location: http://localhost/bebas-tanggungan/mahasiswa/dashboard");
                     exit();
                 } else {

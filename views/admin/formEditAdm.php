@@ -30,55 +30,54 @@
         </button>
         <h3>Edit Pengguna</h3>
       </div>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-danger" type="button">
-          < Keluar</button>
-      </div>
+      <a href="http://localhost/bebas-tanggungan/admin/logout" class="btn btn-danger" type="button">
+        < Keluar</a>
+    </div>
+  </div>
+
+  <div class="container mt-3">
+    <!-- Card Content -->
+    <!-- Card Form Create Admin -->
+    <div class="card p-4 border-0 shadow-sm card-form   " id="formCreateAdm" style="border-radius: 10px; margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;">
+      <form method="POST">
+        <div class="row mb-4 align-items-center">
+          <label for="name" class="col-sm-3 col-form-label fw-semibold">Nama:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control rounded-pill px-3 py-2" id="name" value="<?php echo ($admin['nama_admin']); ?>" name="nama_admin" placeholder="Nama">
+          </div>
+        </div>
+        <div class="row mb-4 align-items-center">
+          <label for="username" class="col-sm-3 col-form-label fw-semibold">Username:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control rounded-pill px-3 py-2" id="username" value="<?php echo ($admin['username']); ?>" name="username" placeholder="Username">
+          </div>
+        </div>
+        <div class="row mb-4 align-items-center">
+          <label for="password" class="col-sm-3 col-form-label fw-semibold">Password:</label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control rounded-pill px-3 py-2" id="password" value="<?php echo ($admin['password']); ?>" name="password" placeholder="Password">
+          </div>
+        </div>
+        <div class="row mb-4 align-items-center">
+          <label for="phone" class="col-sm-3 col-form-label fw-semibold">Nomor Telepon:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control rounded-pill px-3 py-2" id="phone" value="<?php echo ($admin['no_telp']); ?>" name="no_telp" placeholder="Nomor Telepon">
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="submit" id="addAdmButton" class="btn btn-info text-white fw-bold px-4 rounded-3" style="width: 150px;">Edit</button>
+        </div>
+      </form>
     </div>
 
-    <div class="container mt-3">
-      <!-- Card Content -->
-      <!-- Card Form Create Admin -->
-      <div class="card p-4 border-0 shadow-sm card-form   " id="formCreateAdm" style="border-radius: 10px; margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;">
-        <form method="POST">
-          <div class="row mb-4 align-items-center">
-            <label for="name" class="col-sm-3 col-form-label fw-semibold">Nama:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control rounded-pill px-3 py-2" id="name" value="<?php echo ($admin['nama_admin']); ?>" name="nama_admin" placeholder="Nama">
-            </div>
-          </div>
-          <div class="row mb-4 align-items-center">
-            <label for="username" class="col-sm-3 col-form-label fw-semibold">Username:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control rounded-pill px-3 py-2" id="username" value="<?php echo ($admin['username']); ?>" name="username" placeholder="Username">
-            </div>
-          </div>
-          <div class="row mb-4 align-items-center">
-            <label for="password" class="col-sm-3 col-form-label fw-semibold">Password:</label>
-            <div class="col-sm-9">
-              <input type="password" class="form-control rounded-pill px-3 py-2" id="password" value="<?php echo ($admin['password']); ?>" name="password" placeholder="Password">
-            </div>
-          </div>
-          <div class="row mb-4 align-items-center">
-            <label for="phone" class="col-sm-3 col-form-label fw-semibold">Nomor Telepon:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control rounded-pill px-3 py-2" id="phone" value="<?php echo ($admin['no_telp']); ?>" name="no_telp" placeholder="Nomor Telepon">
-            </div>
-          </div>
-          <div class="d-flex justify-content-end">
-            <button type="submit" id="addAdmButton" class="btn btn-info text-white fw-bold px-4 rounded-3" style="width: 150px;">Edit</button>
-          </div>
-        </form>
-      </div>
+    <!-- Footer -->
+    <?php include('views/components/admin/footer.php') ?>
 
-      <!-- Footer -->
-      <?php include('views/components/admin/footer.php') ?>
-
-      <!-- Bootstrap JS -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-      <script src="http://localhost/bebas-tanggungan/views/assets/js/button.js"></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"></script>
+    <script src="http://localhost/bebas-tanggungan/views/assets/js/button.js"></script>
 </body>
 
 </html>

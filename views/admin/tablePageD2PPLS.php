@@ -24,8 +24,8 @@
         <a onclick="goBack()"><img src="http://localhost/bebas-tanggungan/views/assets/icons/arrowToggleFAQ.svg" alt="Toggle FAQ" style="width: 24px; height: 24px;"></a>
       </button>
       <h3>Verifikasi Tanggungan</h3>
-      <button class="btn btn-danger ms-auto" type="button">
-        < Keluar</button>
+      <a href="http://localhost/bebas-tanggungan/admin/logout" class="btn btn-danger ms-auto" type="button">
+        < Keluar</a>
     </div>
 
 
@@ -46,10 +46,10 @@
         <tbody>
           <?php foreach ($mahasiswa as $row): ?>
             <tr>
-              <td class="text-start"><?php echo($row['nama_mahasiswa']); ?></td>
-              <td class="text-start"><?php echo($row['nim']); ?></td>
-              <td class="text-start"><?php echo($row['prodi']); ?></td>
-              <td class="text-start"><?php echo($row['prodi']); ?></td>
+              <td class="text-start"><?php echo ($row['nama_mahasiswa']); ?></td>
+              <td class="text-start"><?php echo ($row['nim']); ?></td>
+              <td class="text-start"><?php echo ($row['prodi']); ?></td>
+              <td class="text-start"><?php echo ($row['prodi']); ?></td>
               <td class="text-start">
                 <a href="detailPage.php" class="btn btn-primary btn-sm">Verifikasi Tanggungan</a>
               </td>

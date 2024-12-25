@@ -28,8 +28,8 @@
         <a onclick="goBack()"><img src="http://localhost/bebas-tanggungan/views/assets/icons/arrowToggleFAQ.svg" alt="Toggle FAQ" style="width: 24px; height: 24px;"></a>
       </button>
       <h3>Edit Form</h3>
-      <button class="btn btn-danger ms-auto" type="button">
-        < Keluar</button>
+      <a href="http://localhost/bebas-tanggungan/admin/logout" class="btn btn-danger" type="button">
+        < Keluar</a>
     </div>
 
 

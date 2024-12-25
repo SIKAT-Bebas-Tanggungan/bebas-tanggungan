@@ -30,53 +30,52 @@
         </button>
         <h3>Edit Pengguna</h3>
       </div>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-danger" type="button">
-          < Keluar</button>
-      </div>
+      <a href="http://localhost/bebas-tanggungan/admin/logout" class="btn btn-danger" type="button">
+        < Keluar</a>
     </div>
+  </div>
 
-    <div class="container mt-3 mb-5">
-      <!-- Card Content -->
-      <!--Card Form Create Mahasiswa-->
-      <div class="card p-4 border-0 shadow-sm card-form" id="formCreateMhs" style="border-radius: 10px; margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;">
-        <form method="POST">
-          <div class="row mb-4 align-items-center">
-            <label for="name" class="col-sm-3 col-form-label fw-semibold">Nama:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control rounded-pill px-3 py-2" id="name" value="<?php echo ($mahasiswa['nama_mahasiswa']); ?>" name="nama_mahasiswa" placeholder="Nama">
-            </div>
+  <div class="container mt-3 mb-5">
+    <!-- Card Content -->
+    <!--Card Form Create Mahasiswa-->
+    <div class="card p-4 border-0 shadow-sm card-form" id="formCreateMhs" style="border-radius: 10px; margin-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;">
+      <form method="POST">
+        <div class="row mb-4 align-items-center">
+          <label for="name" class="col-sm-3 col-form-label fw-semibold">Nama:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control rounded-pill px-3 py-2" id="name" value="<?php echo ($mahasiswa['nama_mahasiswa']); ?>" name="nama_mahasiswa" placeholder="Nama">
           </div>
-          <div class="row mb-4 align-items-center">
-            <label for="username" class="col-sm-3 col-form-label fw-semibold">NIM:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control rounded-pill px-3 py-2" id="username" value="<?php echo ($mahasiswa['nim']); ?>" name="nim" placeholder="Username">
-            </div>
+        </div>
+        <div class="row mb-4 align-items-center">
+          <label for="username" class="col-sm-3 col-form-label fw-semibold">NIM:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control rounded-pill px-3 py-2" id="username" value="<?php echo ($mahasiswa['nim']); ?>" name="nim" placeholder="Username">
           </div>
-          <div class="row mb-4 align-items-center">
-            <label for="password" class="col-sm-3 col-form-label fw-semibold">Tanggal Lahir:</label>
-            <div class="col-sm-9">
-              <input type="password" class="form-control rounded-pill px-3 py-2" id="password" placeholder="-">
-            </div>
+        </div>
+        <div class="row mb-4 align-items-center">
+          <label for="password" class="col-sm-3 col-form-label fw-semibold">Tanggal Lahir:</label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control rounded-pill px-3 py-2" id="password" placeholder="-">
           </div>
-          <div class="row mb-4 align-items-center">
-            <label for="phone" class="col-sm-3 col-form-label fw-semibold">Prodi:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control rounded-pill px-3 py-2" id="phone" value="<?php echo ($mahasiswa['prodi']); ?>" name="prodi" placeholder="Program Studi">
-            </div>
+        </div>
+        <div class="row mb-4 align-items-center">
+          <label for="phone" class="col-sm-3 col-form-label fw-semibold">Prodi:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control rounded-pill px-3 py-2" id="phone" value="<?php echo ($mahasiswa['prodi']); ?>" name="prodi" placeholder="Program Studi">
           </div>
-          <div class="row mb-4 align-items-center">
-            <label for="phone" class="col-sm-3 col-form-label fw-semibold">Angkatan:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control rounded-pill px-3 py-2" id="phone" value="<?php echo ($mahasiswa['angkatan']); ?>" name="angkatan" placeholder="Angkatan">
-            </div>
+        </div>
+        <div class="row mb-4 align-items-center">
+          <label for="phone" class="col-sm-3 col-form-label fw-semibold">Angkatan:</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control rounded-pill px-3 py-2" id="phone" value="<?php echo ($mahasiswa['angkatan']); ?>" name="angkatan" placeholder="Angkatan">
           </div>
-          <div class="d-flex justify-content-end">
-            <button type="submit" id="addMhsButton" class="btn btn-info text-white fw-bold px-4 rounded-3" style="width: 150px;">Edit</button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button type="submit" id="addMhsButton" class="btn btn-info text-white fw-bold px-4 rounded-3" style="width: 150px;">Edit</button>
+        </div>
+      </form>
     </div>
+  </div>
   </div>
 
   <!-- Footer -->

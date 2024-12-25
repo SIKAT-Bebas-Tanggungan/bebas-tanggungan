@@ -87,4 +87,22 @@ class MahasiswaController
         
         require_once 'views/mahasiswa/bebasTanggungan.php';
     }
+
+    public function unggahTanggungan()
+    {
+        ensureMahasiswaAuthenticated();
+        $prodi = $_SESSION['prodi'];
+        if ($prodi !== 'Piranti Perangkat Lunak Situs') {
+            require_once 'views/mahasiswa/unggahTA.php';
+        } else {
+            require_once 'views/mahasiswa/unggahTAd2ppls.php';
+        }
+    }
+
+    public function unduhForm()
+    {
+        ensureMahasiswaAuthenticated();
+
+        require_once 'views/mahasiswa/unduhFormAlur.php';
+    }
 }

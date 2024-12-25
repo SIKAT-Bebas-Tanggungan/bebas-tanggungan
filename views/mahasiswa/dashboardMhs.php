@@ -34,10 +34,10 @@
       <hr />
       <h4 class="mb-3 text-primary">Pilih Layanan</h4>
       <div class="d-flex flex-row gap-3">
-        <a href="unduhFormAlur.php" class="btn btn-outline-primary flex-fill">Unduh Form dan Alur</a>
-        <a href="unggahTA.php" class="btn btn-outline-primary flex-fill">Unggah Tugas Akhir dan Form</a>
+        <a href="http://localhost/bebas-tanggungan/mahasiswa/unduh-form" class="btn btn-outline-primary flex-fill">Unduh Form dan Alur</a>
+        <a href="http://localhost/bebas-tanggungan/mahasiswa/unggah-ta" class="btn btn-outline-primary flex-fill">Unggah Tugas Akhir dan Form</a>
         <a href="http://localhost/bebas-tanggungan/mahasiswa/status" class="btn btn-outline-primary flex-fill">Bebas Tanggungan</a>
-        <a href="hubungiAdmin.php" class="btn btn-outline-primary flex-fill">Kendala Melalui Whatsapp</a>
+        <a href="https://wa.me/6285179605484" class="btn btn-outline-primary flex-fill">Kendala Melalui Whatsapp</a>
       </div>
     </div>
   </main>

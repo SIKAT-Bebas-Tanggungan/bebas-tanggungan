@@ -82,8 +82,8 @@ class AdminController
             $username = htmlspecialchars(trim($_POST['username']));
             $no_telp = htmlspecialchars(trim($_POST['no_telp']));
 
-            $result = $this->adminModel->updateAdmin($adminId, $nama_admin, $username, $no_telp);
-            header("Location: http://localhost/bebas-tanggungan/admin/manajemen/edit-admin/".$adminId);
+            $this->adminModel->updateAdmin($adminId, $nama_admin, $username, $no_telp);
+            header("Location: http://localhost/bebas-tanggungan/admin/manajemen");
             exit();
         } else {
             require_once 'views/admin/formEditAdm.php';
@@ -111,8 +111,8 @@ class AdminController
             $angkatan = htmlspecialchars(trim($_POST['angkatan']));
             $prodi = htmlspecialchars(trim($_POST['prodi']));
 
-            $result = $this->mahasiswaModel->updateMahasiswa($role, $nim, $nama_mahasiswa, $prodi, $password, $angkatan);
-            header("Location: http://localhost/bebas-tanggungan/admin/manajemen/edit-mahasiswa/".$nim);
+            $this->mahasiswaModel->updateMahasiswa($role, $nim, $nama_mahasiswa, $prodi, $password, $angkatan);
+            header("Location: http://localhost/bebas-tanggungan/admin/manajemen");
             exit();
         } else {
             require_once 'views/admin/formEditMhs.php';
@@ -125,6 +125,41 @@ class AdminController
 
         $this->adminModel->deleteAdmin($adminId);
         header("Location: http://localhost/bebas-tanggungan/admin/manajemen");
+    }
+
+    public function tambahAdmin()
+    {
+        ensureAdminAuthenticated();
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $nama_admin = htmlspecialchars(trim($_POST['nama_admin']));
+            $username = htmlspecialchars(trim($_POST['username']));
+            $password = htmlspecialchars(trim($_POST['password']));
+            $no_telp = htmlspecialchars(trim($_POST['no_telp']));
+            $role = 'admin';
+
+            $this->adminModel->createAdmin($nama_admin, $username, $password, $no_telp, $role);
+            header("Location: http://localhost/bebas-tanggungan/admin/manajemen");
+        } else {
+            require_once 'views/admin/formTambahAdm.php';
+        }
+    }
+
+    public function tambahMahasiswa()
+    {
+        ensureAdminAuthenticated();
+
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $nama_mahasiswa = htmlspecialchars(trim($_POST['nama_mahasiswa']));
+            $nim = htmlspecialchars(trim($_POST['nim']));
+            $prodi = htmlspecialchars(trim($_POST['prodi']));
+            $angkatan = htmlspecialchars(trim($_POST['angkatan']));
+
+            $this->mahasiswaModel->createMahasiswa($nim, $nama_mahasiswa, $prodi, $angkatan);
+            header("Location: http://localhost/bebas-tanggungan/admin/manajemen");
+        } else {
+            require_once 'views/admin/formTambahMhs.php';
+        }
     }
 
     public function kelola()
