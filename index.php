@@ -16,6 +16,14 @@ $uriSegments = explode('/', $uri);
 $baseRoute = $uriSegments[0] ?? '';
 
 switch ($baseRoute) {
+    case '':
+        require_once 'views/index.php';
+        break;
+
+    case 'faq':
+        require_once 'views/faq.php';
+        break;
+    
     case 'admin':
         $adminAction = $uriSegments[1] ?? 'dashboard';
 

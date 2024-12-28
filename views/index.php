@@ -10,7 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="assets/css/styleIndex.css" />
+    <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/styleIndex.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -24,21 +24,21 @@
       <div class="container">
         <a class="navbar-brand d-flex align-items-center">
           <img
-            src="assets/images/logoPoltek.png"
+            src="http://localhost/bebas-tanggungan/views/assets/images/logoPoltek.png"
             alt="Logo"
             width="50"
             height="50"
             class="d-inline-block align-text-top"
           />
           <img
-            src="assets/images/JTI_Polinema.png"
+            src="http://localhost/bebas-tanggungan/views/assets/images/JTI_Polinema.png"
             alt="Logo"
             width="50"
             height="50"
             class="d-inline-block align-text-top"
           />
           <img
-            src="assets/images/logoSikatBata.svg"
+            src="http://localhost/bebas-tanggungan/views/assets/images/logoSikatBata.svg"
             alt="Logo"
             width="50"
             height="50"
@@ -71,9 +71,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#tentang">Tentang</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="pages/faq.php">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq">FAQ</a></li>
             <li class="nav-item">
-              <a class="btn btn-primary btn-navbar" href="pages/mahasiswa/loginMhs.php">Ajukan Layanan</a>
+              <a class="btn btn-primary btn-navbar" href="mahasiswa">Ajukan Layanan</a>
             </li>
           </ul>
         </div>
@@ -99,7 +99,7 @@
         <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img
             class="rounded-lg-3"
-            src="assets/images/jurusan.png"
+            src="http://localhost/bebas-tanggungan/views/assets/images/jurusan.png"
             alt=""
             width="522px"
           />
@@ -111,7 +111,7 @@
     <div id="fitur" class="container my-5">
       <h2 class="text-left mb-4">Fitur
         <div>
-            <img src="assets/icons/lineShort.svg">
+            <img src="http://localhost/bebas-tanggungan/views/assets/icons/lineShort.svg">
         </div>
       </h2>
       <div class="row text-center">
@@ -148,13 +148,13 @@
             <span class="bata">BATA</span>
           </span>
           <div>
-            <img src="assets/icons/lineLong.svg">
+            <img src="http://localhost/bebas-tanggungan/views/assets/icons/lineLong.svg">
         </div>
         </h2>
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="assets/images/gedungJTI.png" class="img-fluid rounded-start" alt="gedungPolinema">
+              <img src="http://localhost/bebas-tanggungan/views/assets/images/gedungJTI.png" class="img-fluid rounded-start" alt="gedungPolinema">
             </div>
             <div class="col-sm-8">
               <div class="card-body">
@@ -173,17 +173,17 @@
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" id="backToTop">
-      <img src="assets/icons/backToTop.svg" alt="" />
+      <img src="http://localhost/bebas-tanggungan/views/assets/icons/backToTop.svg" alt="" />
     </a>
 
     <!-- Footer -->
-    <?php include('pages/components/mahasiswa/footer.php') ?> 
+    <?php include('views/components/mahasiswa/footer.php') ?> 
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="assets/js/button.js"></script>
+    <script src="http://localhost/bebas-tanggungan/views/assets/js/button.js"></script>
   </body>
 </html>

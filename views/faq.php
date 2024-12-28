@@ -15,7 +15,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styleIndex.css">
+  <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/styleIndex.css">
 </head>
 
 <body>
@@ -23,16 +23,16 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow">
     <div class="container">
       <div class="d-flex align-items-center">
-        <a href="../index.php" class="d-flex align-items-center text-decoration-none">
+        <a href="http://localhost/bebas-tanggungan" class="d-flex align-items-center text-decoration-none">
           <img
-            src="assets/icons/backToTop.svg"
+            src="http://localhost/bebas-tanggungan/views/assets/icons/backToTop.svg"
             alt="icon"
             width="50"
             height="50"
             class="me-2"
             style="transform: rotate(-90deg);" />
           <img
-            src="assets/images/logoSikatBata.svg"
+            src="http://localhost/bebas-tanggungan/views/assets/images/logoSikatBata.svg"
             alt="icon"
             width="50"
             height="50"
@@ -57,7 +57,7 @@
         <div class="d-flex justify-content-between align-items-center border border-black rounded mt-2">
           <span class="p-3 fw-medium">Apa itu Sistem Kelola Bebas Tanggungan?</span>
           <button class="btn me-3 toggle-btn">
-            <img src="assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
+            <img src="http://localhost/bebas-tanggungan/views/assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
           </button>
         </div>
         <div class="dropdown-content" style="display: none;">
@@ -68,7 +68,7 @@
         <div class="d-flex justify-content-between align-items-center border border-black rounded mt-2">
           <span class="p-3 fw-medium">Bagaimana cara mahasiswa mengecek status tanggungan mereka?</span>
           <button class="btn me-3 toggle-btn">
-            <img src="assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
+            <img src="http://localhost/bebas-tanggungan/views/assets/icons/arrowToggleFAQ.svg" alt="arrowToggleFAQ">
           </button>
         </div>
         <div class="dropdown-content" style="display: none;">
@@ -102,9 +102,6 @@
         </div>
       </div>
     </div>
-    <div class="text-start mt-4 mt-5">
-      <button class="btn btn-primary px-4 py-2">Pertanyaan Lebih Lanjut &gt;</button>
-    </div>
   </main>
 
   <!-- Footer -->
@@ -123,7 +120,7 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <script src="assets/js/faq.js"></script>
+  <script src="http://localhost/bebas-tanggungan/views/assets/js/faq.js"></script>
 </body>
 
 </html>

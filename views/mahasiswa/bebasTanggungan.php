@@ -40,40 +40,40 @@
         <!-- Card 1: Alat/Program/Aplikasi -->
         <div class="card p-4 shadow-sm mb-4">
           <div class="d-flex justify-content-between align-items-center">
-            <h5 class="card-title mb-0">Alat/Program/Aplikasi</h5>
-            <span class="bg-success text-white rounded-pill p-2">Selesai</span>
+            <h5 class="card-title mb-0">Laporan Tugas Akhir/Skripsi</h5>
+            <span class="bg-success text-white rounded-pill p-2"><?php echo $statusTanggungan[0]['status'] ?? 'Menunggu Verifikasi'; ?></span>
           </div>
         </div>
 
         <!-- Card 2: Laporan -->
         <div class="card p-4 shadow-sm mb-4">
           <div class="d-flex justify-content-between align-items-center">
-            <h5 class="card-title mb-0">Laporan</h5>
-            <span class="bg-info text-white rounded-pill p-2">Menunggu Verifikasi</span>
+            <h5 class="card-title mb-0">Program/Aplikasi Tugas Akhir</h5>
+            <span class="bg-info text-white rounded-pill p-2"><?php echo $statusTanggungan[1]['status'] ?? 'Menunggu Verifikasi'; ?></span>
           </div>
         </div>
 
         <!-- Card 3: Pernyataan Publikasi -->
         <div class="card p-4 shadow-sm mb-4">
           <div class="d-flex justify-content-between align-items-center">
-            <h5 class="card-title mb-0">Pernyataan Publikasi</h5>
-            <span class="bg-info text-white rounded-pill p-2">Menunggu Verifikasi</span>
+            <h5 class="card-title mb-0">Surat Pernyataan Publikasi</h5>
+            <span class="bg-info text-white rounded-pill p-2"><?php echo $statusTanggungan[2]['status'] ?? 'Menunggu Verifikasi'; ?></span>
           </div>
         </div>
 
         <!-- Card 4: Distribusi Laporan Skripsi -->
         <div class="card p-4 shadow-sm mb-4">
           <div class="d-flex justify-content-between align-items-center">
-            <h5 class="card-title mb-0">Distribusi Laporan Skripsi</h5>
-            <span class="bg-info text-white rounded-pill p-2">Menunggu Verifikasi</span>
+            <h5 class="card-title mb-0">Tanda Terima Penyerahan Laporan TA/Skripsi</h5>
+            <span class="bg-info text-white rounded-pill p-2"><?php echo $statusTanggungan[3]['status'] ?? 'Menunggu Verifikasi'; ?></span>
           </div>
         </div>
 
         <!-- Card 5: Distribusi Laporan Magang -->
         <div class="card p-4 shadow-sm mb-4">
           <div class="d-flex justify-content-between align-items-center">
-            <h5 class="card-title mb-0">Distribusi Laporan Magang</h5>
-            <span class="bg-info text-white rounded-pill p-2">Menunggu Verifikasi</span>
+            <h5 class="card-title mb-0">Tanda Terima Penyerahan Laporan PKL</h5>
+            <span class="bg-info text-white rounded-pill p-2"><?php echo $statusTanggungan[4]['status'] ?? 'Menunggu Verifikasi'; ?></span>
           </div>
         </div>
 
@@ -81,7 +81,7 @@
         <div class="card p-4 shadow-sm mb-4">
           <div class="d-flex justify-content-between align-items-center">
             <h5 class="card-title mb-0">Scan TOEIC</h5>
-            <span class="bg-success text-white rounded-pill p-2">Selesai</span>
+            <span class="bg-success text-white rounded-pill p-2"><?php echo $statusTanggungan[5]['status'] ?? 'Menunggu Verifikasi'; ?></span>
           </div>
         </div>
 

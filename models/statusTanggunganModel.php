@@ -54,7 +54,7 @@ class StatusTanggunganModel
             $statusTanggungan = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if ($statusTanggungan) {
-                return ['success' => true, 'data' => $statusTanggungan];
+                return $statusTanggungan;
             } else {
                 return ['success' => false, 'message' => 'No records found.'];
             }
@@ -74,7 +74,7 @@ class StatusTanggunganModel
             $statusTanggungan = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($statusTanggungan) {
-                return ['success' => true, 'data' => $statusTanggungan];
+                return $statusTanggungan;
             } else {
                 return ['success' => false, 'message' => 'Status Tanggungan not found.'];
             }
@@ -94,7 +94,7 @@ class StatusTanggunganModel
             $statusTanggungan = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if ($statusTanggungan) {
-                return ['success' => true, 'data' => $statusTanggungan];
+                return $statusTanggungan;
             } else {
                 return ['success' => false, 'message' => 'Status Tanggungan not found.'];
             }

@@ -2,6 +2,7 @@
 require_once 'models/adminModel.php';
 require_once 'models/mahasiswaModel.php';
 require_once 'models/statusTanggunganModel.php';
+require_once 'models/unggahBerkas.php';
 require_once 'middleware/sessionAdmin.php';
 
 class AdminController
@@ -9,12 +10,14 @@ class AdminController
     private $adminModel;
     private $mahasiswaModel;
     private $statusTanggunganModel;
+    private $unggahBerkasModel;
 
     public function __construct()
     {
         $this->adminModel = new AdminModel();
         $this->mahasiswaModel = new MahasiswaModel();
         $this->statusTanggunganModel = new StatusTanggunganModel();
+        $this->unggahBerkasModel = new UnggahBerkasModel();
     }
 
     public function login()
@@ -194,6 +197,33 @@ class AdminController
         ensureAdminAuthenticated();
 
         $mahasiswa = $this->mahasiswaModel->readMahasiswaByNim($nim);
+        $unggahBerkas = $this->unggahBerkasModel->readUnggahBerkasByNim($nim) ?? [];
+        if (!is_array($unggahBerkas)) {
+            $unggahBerkas = [];
+        }
+
+        usort($unggahBerkas, function ($a, $b) {
+            if (!is_array($a) || !is_array($b) || !isset($a['id_berkas']) || !isset($b['id_berkas'])) {
+                return 0;
+            }
+            return $a['id_berkas'] - $b['id_berkas'];
+        });
+
+        $mappedData = [];
+        foreach ($unggahBerkas as $item) {
+            if (isset($item['id_berkas'])) {
+                $mappedData[$item['id_berkas']] = $item;
+            }
+        }
+
+        $result = [];
+        for ($i = 1; $i <= 6; $i++) {
+            if (isset($mappedData[$i])) {
+                $result[] = $mappedData[$i];
+            } else {
+                $result[] = ['id_berkas' => $i, 'nama_file' => '-'];
+            }
+        }
 
         require_once 'views/admin/detailPage.php';
     }

@@ -56,7 +56,27 @@ class UnggahBerkasModel
             $berkas = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($berkas) {
-                return ['success' => true, 'data' => $berkas];
+                return $berkas;
+            } else {
+                return ['success' => false, 'message' => 'File not found.'];
+            }
+        } catch (PDOException $e) {
+            return ['success' => false, 'message' => $e->getMessage()];
+        }
+    }
+
+    // Read Unggah Berkas by NIM
+    public function readUnggahBerkasByNim($nim)
+    {
+        try {
+            $query = "SELECT * FROM unggah_berkas WHERE nim = :nim";
+            $stmt = $this->pdo->prepare($query);
+            $stmt->bindParam(':nim', $nim, PDO::PARAM_INT);
+            $stmt->execute();
+            $berkas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if ($berkas) {
+                return $berkas;
             } else {
                 return ['success' => false, 'message' => 'File not found.'];
             }

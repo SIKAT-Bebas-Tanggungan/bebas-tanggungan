@@ -1,14 +1,20 @@
 <?php
 require_once 'models/mahasiswaModel.php';
+require_once 'models/statusTanggunganModel.php';
+require_once 'models/unggahBerkas.php';
 require_once 'middleware/sessionMahasiswa.php';
 
 class MahasiswaController
 {
     private $mahasiswaModel;
+    private $statusTanggunganModel;
+    private $unggahBerkasModel;
 
     public function __construct()
     {
         $this->mahasiswaModel = new MahasiswaModel();
+        $this->statusTanggunganModel = new StatusTanggunganModel();
+        $this->unggahBerkasModel = new UnggahBerkasModel();
     }
 
     public function login()
@@ -81,10 +87,53 @@ class MahasiswaController
     public function bebasTanggungan()
     {
         ensureMahasiswaAuthenticated();
-        
+
         $nim = $_SESSION['nim'];
         $mahasiswa = $this->mahasiswaModel->readMahasiswaByNim($nim);
+        $statusTanggungan = $this->statusTanggunganModel->readStatusTanggunganByNim($nim);
+        $unggahBerkas = $this->unggahBerkasModel->readUnggahBerkasByNim($nim) ?? [];
+        $statusTanggungan = $this->statusTanggunganModel->readStatusTanggunganByNim($nim) ?? [];
+
+        // Ensure both data sets are arrays
+        if (!is_array($unggahBerkas)) {
+            $unggahBerkas = [];
+        }
+        if (!is_array($statusTanggungan)) {
+            $statusTanggungan = [];
+        }
+
+        // Step 2: Sort `unggah_berkas` by `id_berkas`
+        usort($unggahBerkas, function ($a, $b) {
+            return ($a['id_berkas'] ?? 0) - ($b['id_berkas'] ?? 0);
+        });
+
+        // Step 3: Extract the sorted `id_unggah` order
+        $sortedIdUnggah = array_column($unggahBerkas, 'id_unggah');
+
+        // Step 4: Sort `status_tanggungan` based on the sorted `id_unggah` order
+        usort($statusTanggungan, function ($a, $b) use ($sortedIdUnggah) {
+            if (!is_array($a) || !isset($a['id_unggah']) || !is_array($b) || !isset($b['id_unggah'])) {
+                return 0;
+            }
         
+            $orderA = array_search($a['id_unggah'], $sortedIdUnggah);
+            $orderB = array_search($b['id_unggah'], $sortedIdUnggah);
+        
+            $orderA = ($orderA === false) ? PHP_INT_MAX : $orderA;
+            $orderB = ($orderB === false) ? PHP_INT_MAX : $orderB;
+        
+            return $orderA - $orderB;
+        });
+        
+
+        // At this point:
+        // 1. `$unggahBerkas` is sorted by `id_berkas`.
+        // 2. `$statusTanggungan` is sorted by the `id_unggah` order from `unggahBerkas`.
+        
+        if (!is_array($statusTanggungan) || empty($statusTanggungan)) {
+            echo "Error: `statusTanggungan` is not a valid array or is empty.";
+            die();
+        }
         require_once 'views/mahasiswa/bebasTanggungan.php';
     }
 

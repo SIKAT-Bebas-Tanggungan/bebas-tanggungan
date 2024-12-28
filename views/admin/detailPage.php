@@ -45,7 +45,7 @@
           <div class="row d-flex justify-content-between align-items-center">
             <div class="col-8 d-flex flex-column">
               <span>Laporan Tugas Akhir/Skripsi</span>
-              <a href="#">Laporan_akhir_mahasiswa_123</a>
+              <a href="#"><?php echo htmlspecialchars($result[0]['nama_file']); ?></a>
             </div>
             <div class="col-4 d-flex justify-content-end">
               <div class="btn btn-sm bg-info d-flex align-items-center rounded">
@@ -58,7 +58,7 @@
           <div class="row d-flex justify-content-between align-items-center">
             <div class="col-8 d-flex flex-column">
               <span>Program/Aplikasi Tugas Akhir</span>
-              <a href="#">Laporan_akhir_mahasiswa_123</a>
+              <a href="#"><?php echo htmlspecialchars($result[1]['nama_file']); ?></a>
             </div>
             <div class="col-4 d-flex justify-content-end">
               <div class="btn btn-sm bg-info d-flex align-items-center rounded">
@@ -71,7 +71,7 @@
           <div class="row d-flex justify-content-between align-items-center">
             <div class="col-8 d-flex flex-column">
               <span>Upload Surat Pernyataan Publikasi</span>
-              <a href="#">Laporan_akhir_mahasiswa_123</a>
+              <a href="#"><?php echo htmlspecialchars($result[2]['nama_file']); ?></a>
             </div>
             <div class="col-4 d-flex justify-content-end">
               <div class="btn btn-sm bg-info d-flex align-items-center rounded">
@@ -84,7 +84,7 @@
           <div class="row d-flex justify-content-between align-items-center">
             <div class="col-8 d-flex flex-column">
               <span>Upload Tanda Terima Penyerahan Laporan TA/Skripsi</span>
-              <a href="#">Laporan_akhir_mahasiswa_123</a>
+              <a href="#"><?php echo htmlspecialchars($result[3]['nama_file']); ?></a>
             </div>
             <div class="col-4 d-flex justify-content-end">
               <div class="btn btn-sm bg-info d-flex align-items-center rounded">
@@ -97,7 +97,7 @@
           <div class="row d-flex justify-content-between align-items-center">
             <div class="col-8 d-flex flex-column">
               <span>Upload Tanda Terima Penyerahan Laporan PKL</span>
-              <a href="#">Laporan_akhir_mahasiswa_123</a>
+              <a href="#"><?php echo htmlspecialchars($result[4]['nama_file']); ?></a>
             </div>
             <div class="col-4 d-flex justify-content-end">
               <div class="btn btn-sm bg-info d-flex align-items-center rounded">
@@ -110,7 +110,7 @@
           <div class="row d-flex justify-content-between align-items-center">
             <div class="col-8 d-flex flex-column">
               <span>Upload Scan TOEIC (Minimal 450 untuk Diploma 4)</span>
-              <a href="#">Laporan_akhir_mahasiswa_123</a>
+              <a href="#"><?php echo htmlspecialchars($result[5]['nama_file']); ?></a>
             </div>
             <div class="col-4 d-flex justify-content-end">
               <div class="btn btn-sm bg-info d-flex align-items-center rounded">
