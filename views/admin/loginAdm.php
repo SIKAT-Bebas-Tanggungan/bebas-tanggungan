@@ -12,7 +12,7 @@
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="../assets/css/loginPage.css" />
+  <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/loginPage.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
     rel="stylesheet" />
@@ -23,9 +23,9 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow" style="height: 101px;">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center">
-        <img src="../assets/images/logoPoltek.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
-        <img src="../assets/images/JTI_Polinema.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
-        <img src="../assets/images/logoSikatBata.svg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
+        <img src="http://localhost/bebas-tanggungan/views/assets/images/logoPoltek.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
+        <img src="http://localhost/bebas-tanggungan/views/assets/images/JTI_Polinema.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
+        <img src="http://localhost/bebas-tanggungan/views/assets/images/logoSikatBata.svg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
         <span class="sikat-bata ms-2">
           <span class="sikat">SIKAT-</span>
           <span class="bata"> BATA</span>
@@ -56,7 +56,7 @@
                 </div>
               </div>
               <div class="d-flex justify-content-between mb-3 align-items-center" style="margin-top: 50px;">
-                <a href="dashboardAdm.php" class="btn btn-primary w-100">Masuk</a>
+                <button type="submit" class="btn btn-primary w-100">Masuk</button>
               </div>
             </form>
           </div>
@@ -66,7 +66,7 @@
   </div>
 
   <!-- Footer -->
-  <?php include('../components/mahasiswa/footer.php') ?>
+  <?php include('views/components/mahasiswa/footer.php') ?>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

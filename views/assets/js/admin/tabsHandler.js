@@ -8,18 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to show the correct content based on the active tab
   function showContent(activeTab) {
     contentDivs.forEach(div => {
-      if (div.id === 'content-' + activeTab) {
-        div.style.display = 'block'; // Show the active content
-      } else {
-        div.style.display = 'none'; // Hide the inactive content
-      }
+      div.style.display = div.id === 'content-' + activeTab ? 'block' : 'none';
     });
 
     // Update the href for the add user button based on the active tab
     if (activeTab === "admin") {
-      addUserLink.href = "formTambahAdm.php";
+      addUserLink.href = "http://localhost/bebas-tanggungan/admin/manajemen/tambah-admin";
     } else if (activeTab === "mahasiswa") {
-      addUserLink.href = "formTambahMhs.php";
+      addUserLink.href = "http://localhost/bebas-tanggungan/admin/manajemen/tambah-mahasiswa";
     }
   }
 
@@ -33,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       tabButtons.forEach(btn => btn.classList.remove('active', 'bg-primary', 'text-white'));
       // Add active class to the clicked button
       button.classList.add('active', 'bg-primary', 'text-white');
-      
+
       // Get the data-tab attribute to determine which content to show
       const activeTab = button.getAttribute('data-tab');
       showContent(activeTab);

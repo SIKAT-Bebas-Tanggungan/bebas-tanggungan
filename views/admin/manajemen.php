@@ -13,110 +13,123 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/admin/dashboadAdm.css">
-  <link rel="stylesheet" href="../assets/css/admin/sidebar.css">
+  <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/admin/dashboadAdm.css">
+  <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/admin/sidebar.css">
 </head>
 
 <body>
   <!-- Sidebar -->
-  <?php include('../components/admin/sideBar.php') ?>
+  <?php include('views/components/admin/sideBar.php') ?>
 
- <!-- Main Content -->
- <div class="content" style="margin-left: 300px; padding: 60px 20px">
-  <div class="d-flex justify-content-between align-items-center">
-    <h3>Data Pengguna</h3>
-      <button class="btn btn-danger" type="button">< Keluar</button>
-  </div>
+  <!-- Main Content -->
+  <div class="content" style="margin-left: 300px; padding: 60px 20px">
+    <div class="d-flex justify-content-between align-items-center">
+      <h3>Data Pengguna</h3>
+      <a href="http://localhost/bebas-tanggungan/admin/logout" class="btn btn-danger" type="button">
+        < Keluar</a>
+    </div>
 
     <!--Search input-->
-  <?php include('../components/admin/searchInput.php') ?>
+    <?php include('views/components/admin/searchInput.php') ?>
 
 
-  <div class="d-flex justify-content-end mt-4">
-    <button class="btn btn-outline-info p-2" id="btn-add-user" style="border-radius: 20px;">
-    <a id="add-user-link" href="#" style="text-decoration: none; color: black;">
-      <img src="../assets/icons/addUser.svg" alt="iconAddUser"> Tambah Pengguna
-    </a>
-  </button>
-  </div>
-  <ul class="nav nav-tabs" id="userTabs">
-  <li class="nav-item">
-    <button class="nav-link border text-black active bg-primary text-white" data-tab="admin">
-      Admin
-    </button>
-  </li>
-  <li class="nav-item">
-    <button class="nav-link border text-black" data-tab="mahasiswa">
-      Mahasiswa
-    </button>
-  </li>
-</ul>
+    <div class="d-flex justify-content-end mt-4">
+      <button class="btn btn-outline-info p-2" id="btn-add-user" style="border-radius: 20px;">
+        <a id="add-user-link" style="text-decoration: none; color: black;">
+          <img src="http://localhost/bebas-tanggungan/views/assets/icons/addUser.svg" alt="iconAddUser"> Tambah Pengguna
+        </a>
+      </button>
+    </div>
+    <ul class="nav nav-tabs" id="userTabs">
+      <li class="nav-item">
+        <button class="nav-link border text-black active bg-primary text-white" data-tab="admin">
+          Admin
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link border text-black" data-tab="mahasiswa">
+          Mahasiswa
+        </button>
+      </li>
+    </ul>
 
-<div id="content-admin" class="table-content" style="display: none;">
-  <div class="table-responsive">
-    <table class="table table-white align-middle w-100">
-      <thead>
-        <tr>
-          <th>Nama</th>
-          <th>Username</th>
-          <th>Nomor Telepon</th>
-          <th>Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Admin</td>
-          <td>Admin@admin</td>
-          <td>82134567900</td>
-          <td>
-            <a href="formEditAdm.php"><button class="btn btn-info"><img src="../assets/icons/editUser.svg" alt="Delete" /></button></a>
-            <button class="btn btn-danger"><img src="../assets/icons/deleteUser.svg" alt="Edit" /></button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+    <div id="content-admin" class="table-content" style="display: none;">
+      <div class="table-responsive">
+        <table class="table table-white align-middle w-100">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Username</th>
+              <th>Nomor Telepon</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($admin as $row): ?>
+              <tr>
+                <td><?php echo htmlspecialchars($row['nama_admin']); ?></td>
+                <td><?php echo htmlspecialchars($row['username']); ?></td>
+                <td><?php echo htmlspecialchars($row['no_telp']); ?></td>
+                <td>
+                  <a href="http://localhost/bebas-tanggungan/admin/manajemen/edit-admin/<?php echo $row['id_admin']; ?>" class="btn btn-info">
+                    <img src="http://localhost/bebas-tanggungan/views/assets/icons/editUser.svg" alt="Edit" />
+                  </a>
+                  <a href="http://localhost/bebas-tanggungan/admin/manajemen/delete-admin/<?php echo $row['id_admin']; ?>" class="btn btn-danger">
+                    <img src="http://localhost/bebas-tanggungan/views/assets/icons/deleteUser.svg" alt="Delete" />
+                  </a>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-<div id="content-mahasiswa" class="table-content" style="display: none;">
-  <div class="table-responsive">
-    <table class="table table-white align-middle w-100">
-      <thead>
-        <tr>
-          <th>Nama</th>
-          <th>NIM</th>
-          <th>Prodi</th>
-          <th>Angkatan</th>
-          <th>Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Mahasiswa123</td>
-          <td>1234123123</td>
-          <td>D4 TI</td>
-          <td>2024</td>
-          <td>
-            <a href="formEditMhs.php"><button class="btn btn-info"><img src="../assets/icons/editUser.svg" alt="Delete" /></button></a>
-            <button class="btn btn-danger"><img src="../assets/icons/deleteUser.svg" alt="Edit" /></button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+    <div id="content-mahasiswa" class="table-content" style="display: none;">
+      <div class="table-responsive">
+        <table class="table table-white align-middle w-100">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>NIM</th>
+              <th>Prodi</th>
+              <th>Angkatan</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($mahasiswa as $row): ?>
+              <tr>
+                <td><?php echo htmlspecialchars($row['nama_mahasiswa']); ?></td>
+                <td><?php echo htmlspecialchars($row['nim']); ?></td>
+                <td><?php echo htmlspecialchars($row['prodi']); ?></td>
+                <td><?php echo htmlspecialchars($row['angkatan']); ?></td>
+                <td>
+                  <a href="http://localhost/bebas-tanggungan/admin/manajemen/edit-mahasiswa/<?php echo $row['nim']; ?>" class="btn btn-info">
+                    <img src="http://localhost/bebas-tanggungan/views/assets/icons/editUser.svg" alt="Edit" />
+                  </a>
+                  <a href="http://localhost/bebas-tanggungan/admin/manajemen/delete-mahasiswa/<?php echo $row['nim']; ?>" class="btn btn-danger">
+                    <img src="http://localhost/bebas-tanggungan/views/assets/icons/deleteUser.svg" alt="Delete" />
+                  </a>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
 
-  <!-- Footer -->
-  <?php include('../components/admin/footer.php') ?>
+    <!-- Footer -->
+    <?php include('views/components/admin/footer.php') ?>
 
-  <!-- Bootstrap JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
-    
-  <!--js Tabs Table-->
-  <script src="../assets/js/admin/tabsHandler.js"></script>  
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"></script>
+
+    <!--js Tabs Table-->
+    <script src="http://localhost/bebas-tanggungan/views/assets/js/admin/tabsHandler.js"></script>
 </body>
 
 </html>

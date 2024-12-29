@@ -10,20 +10,20 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <!-- Font Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
-    
-    <link rel="stylesheet" href="../assets/css/mahasiswa/dashboardMhs.css">
-    <link rel="stylesheet" href="../assets/css/mahasiswa/navbarWithLink.css">
-    <link rel="stylesheet" href="../assets/css/mahasiswa/footer.css">
+
+    <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/mahasiswa/dashboardMhs.css">
+    <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/mahasiswa/navbarWithLink.css">
+    <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/mahasiswa/footer.css">
 
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-  <!-- Navbar -->
-  <?php include('../components/mahasiswa/navbarWithLink.php') ?>
+    <!-- Navbar -->
+    <?php include('views/components/mahasiswa/navbarWithLink.php') ?>
 
     <!-- Main Content -->
     <div class="container my-5">
-        <h2 class="section-title fs-3 fw-bold mb-4">Status <span style="color: #FA9D1C">Bebas Tanggungan</span></h2>
+        <h2 class="section-title fs-3 fw-bold mb-4">Status <span class="berkas">Bebas Tanggungan</span></h2>
         <a href="dashboardMhs.html" class="btn btn-outline-secondary mb-3 d-inline-block me-2">
             < Kembali</a>
                 <p class="mb-1 fs-4">Hai, <span class="fw-medium">MAHASISWA 123!</span></p>
@@ -98,14 +98,15 @@
                 <div class="mt-5"></div> <!-- Additional space below the card -->
     </div>
 
- <!-- Footer -->
- <?php include('../components/mahasiswa/footer.php') ?>
+    <!-- Footer -->
+    <?php include('views/components/mahasiswa/footer.php') ?>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous">
     </script>
-    <script src="../assets/js/button.js"></script>
+    <script src="http://localhost/bebas-tanggungan/views/assets/js/button.js"></script>
 </body>
+
 </html>

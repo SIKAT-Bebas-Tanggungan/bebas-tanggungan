@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,21 +10,20 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-  />
+    crossorigin="anonymous" />
   <!-- Font Poppins -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="../assets/css/mahasiswa/dashboardMhs.css">
-  <link rel="stylesheet" href="../assets/css/mahasiswa/navbarWithLink.css">
-  <link rel="stylesheet" href="../assets/css/mahasiswa/footer.css">
+    rel="stylesheet" />
+  <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/mahasiswa/dashboardMhs.css">
+  <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/mahasiswa/navbarWithLink.css">
+  <link rel="stylesheet" href="http://localhost/bebas-tanggungan/views/assets/css/mahasiswa/footer.css">
 
 </head>
+
 <body class="d-flex flex-column min-vh-100">
   <!-- Navbar -->
-  <?php include('../components/mahasiswa/navbarWithLink.php') ?>
+  <?php include('views/components/mahasiswa/navbarWithLink.php') ?>
 
   <!-- Main Content -->
   <div class="container my-5">
@@ -32,7 +32,8 @@
     <!-- Card Utama: Semua Form -->
     <div class="card p-4 shadow-sm mb-4">
       <div class="d-grid gap-2 d-md-block">
-        <a onclick="goBack()" class="btn btn-outline-secondary mb-3 d-inline-block me-2">< Kembali</a>
+        <a onclick="goBack()" class="btn btn-outline-secondary mb-3 d-inline-block me-2">
+          < Kembali</a>
       </div>
       <form>
         <!-- Card 1: Laporan Tugas Akhir/Skripsi -->
@@ -49,7 +50,7 @@
             - Bab 1 sampai Penutup<br />
             - Daftar Pustaka<br />
             - Lampiran (bila ada)<br />
-            
+
           </small>
           <small class="mt-4 text-muted">Catatan: Upload dalam bentuk PDF, maksimal 10 MB.</small>
         </div>
@@ -93,23 +94,23 @@
 
     <!--Button & danger text-->
     <div class="d-flex justify-content-between align-items-center">
-        <div class="text-danger mb-4">*Form tidak boleh kosong</div>
-        <div class="d-flex justify-content-end">
-          <button type="button" class="btn btn-primary me-2 rounded-pill">Unggah</button>
-          <button type="button" class="btn btn-info text-light rounded-pill">Simpan</button>
-        </div>
+      <div class="text-danger mb-4">*Form tidak boleh kosong</div>
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary me-2 rounded-pill">Unggah</button>
+        <button type="button" class="btn btn-info text-light rounded-pill">Simpan</button>
       </div>
     </div>
+  </div>
 
   <!-- Footer -->
-  <?php include('../components/mahasiswa/footer.php') ?>
+  <?php include('views/components/mahasiswa/footer.php') ?>
 
   <!-- Bootstrap JS -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
-  <script src="../assets/js/button.js"></script>
+    crossorigin="anonymous"></script>
+  <script src="http://localhost/bebas-tanggungan/views/assets/js/button.js"></script>
 </body>
+
 </html>
