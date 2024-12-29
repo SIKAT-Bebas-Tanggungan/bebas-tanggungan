@@ -18,8 +18,7 @@ class NotifikasiModel
     public function createNotifikasi($nama, $isi, $waktu, $id_admin, $nim)
     {
         try {
-            $query = "INSERT INTO notifikasi (nama, isi, waktu, id_admin, nim) 
-                      VALUES (:nama, :isi, :waktu, :id_admin, :nim)";
+            $query = "EXEC sp_tambah_notifikasi";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nama', $nama);
             $stmt->bindParam(':isi', $isi);
@@ -36,7 +35,7 @@ class NotifikasiModel
     public function readNotifikasi($nim)
     {
         try {
-            $query = "SELECT * FROM notifikasi WHERE nim = :nim";
+            $query = "EXEC sp_tampilkan_notifikasi";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nim', $nim);
             $stmt->execute();
@@ -55,9 +54,7 @@ class NotifikasiModel
     public function updateNotifikasi($id_notifikasi, $nama, $isi, $waktu, $id_admin, $nim)
     {
         try {
-            $query = "UPDATE notifikasi 
-                      SET nama = :nama, isi = :isi, waktu = :waktu, id_admin = :id_admin, nim = :nim 
-                      WHERE id_notifikasi = :id_notifikasi";
+            $query = "EXEC sp_edit_notifikasi";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nama', $nama);
             $stmt->bindParam(':isi', $isi);

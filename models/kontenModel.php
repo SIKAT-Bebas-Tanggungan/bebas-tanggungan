@@ -18,7 +18,7 @@ class KontenModel
     public function createKonten($nama)
     {
         try {
-            $query = "INSERT INTO konten (nama) VALUES (:nama)";
+            $query = "EXEC sp_tambah_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nama', $nama, PDO::PARAM_STR);
             $stmt->execute();
@@ -31,7 +31,7 @@ class KontenModel
     public function readAllKonten()
     {
         try {
-            $query = "SELECT * FROM konten";
+            $query = "EXEC sp_tampilkan_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             return ['success' => true, 'data' => $stmt->fetchAll(PDO::FETCH_ASSOC)];
@@ -43,7 +43,7 @@ class KontenModel
     public function readKontenById($id_konten)
     {
         try {
-            $query = "SELECT * FROM konten WHERE id_konten = :id_konten";
+            $query = "EXEC sp_tampilkan_per_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_konten', $id_konten, PDO::PARAM_INT);
             $stmt->execute();
@@ -62,7 +62,7 @@ class KontenModel
     public function updateKonten($id_konten, $nama)
     {
         try {
-            $query = "UPDATE konten SET nama = :nama WHERE id_konten = :id_konten";
+            $query = "EXEC sp_edit_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nama', $nama, PDO::PARAM_STR);
             $stmt->bindParam(':id_konten', $id_konten, PDO::PARAM_INT);
@@ -76,7 +76,7 @@ class KontenModel
     public function deleteKonten($id_konten)
     {
         try {
-            $query = "DELETE FROM konten WHERE id_konten = :id_konten";
+            $query = "EXEC sp_hapus_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_konten', $id_konten, PDO::PARAM_INT);
             $stmt->execute();

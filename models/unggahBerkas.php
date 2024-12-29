@@ -19,8 +19,7 @@ class UnggahBerkasModel
     public function createUnggahBerkas($id_mahasiswa, $id_berkas, $lokasi_file)
     {
         try {
-            $query = "INSERT INTO unggah_berkas (id_mahasiswa, id_berkas, lokasi_file) 
-                      VALUES (:id_mahasiswa, :id_berkas, :lokasi_file)";
+            $query = "EXEC sp_unggah_berkas";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_mahasiswa', $id_mahasiswa, PDO::PARAM_INT);
             $stmt->bindParam(':id_berkas', $id_berkas, PDO::PARAM_INT);
@@ -36,7 +35,7 @@ class UnggahBerkasModel
     public function readAllUnggahBerkas()
     {
         try {
-            $query = "SELECT * FROM unggah_berkas";
+            $query = "EXEC sp_tampilkan_unggah_berkas";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             return ['success' => true, 'data' => $stmt->fetchAll(PDO::FETCH_ASSOC)];
@@ -49,7 +48,7 @@ class UnggahBerkasModel
     public function readUnggahBerkasById($id_unggah)
     {
         try {
-            $query = "SELECT * FROM unggah_berkas WHERE id_unggah = :id_unggah";
+            $query = "EXEC sp_tampilkan_id_unggah";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_unggah', $id_unggah, PDO::PARAM_INT);
             $stmt->execute();
@@ -69,7 +68,7 @@ class UnggahBerkasModel
     public function readUnggahBerkasByNim($nim)
     {
         try {
-            $query = "SELECT * FROM unggah_berkas WHERE nim = :nim";
+            $query = "EXEC sp_tampilkan_unggahan_nim";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nim', $nim, PDO::PARAM_INT);
             $stmt->execute();
@@ -89,9 +88,7 @@ class UnggahBerkasModel
     public function updateUnggahBerkas($id_unggah, $id_mahasiswa, $id_berkas, $lokasi_file)
     {
         try {
-            $query = "UPDATE unggah_berkas 
-                      SET id_mahasiswa = :id_mahasiswa, id_berkas = :id_berkas, lokasi_file = :lokasi_file 
-                      WHERE id_unggah = :id_unggah";
+            $query = "EXEC sp_edit_unggah_berkas";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_unggah', $id_unggah, PDO::PARAM_INT);
             $stmt->bindParam(':id_mahasiswa', $id_mahasiswa, PDO::PARAM_INT);
@@ -108,7 +105,7 @@ class UnggahBerkasModel
     public function deleteUnggahBerkas($id_unggah)
     {
         try {
-            $query = "DELETE FROM unggah_berkas WHERE id_unggah = :id_unggah";
+            $query = "EXEC sp_hapus_unggahan";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_unggah', $id_unggah, PDO::PARAM_INT);
             $stmt->execute();

@@ -19,8 +19,7 @@ class SusunanKontenModel
     public function createSusunanKonten($id_konten, $id_admin, $isi_konten)
     {
         try {
-            $query = "INSERT INTO susunan_konten (id_konten, id_admin, isi_konten) 
-                      VALUES (:id_konten, :id_admin, :isi_konten)";
+            $query = "EXEC sp_tambah_susunan_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_konten', $id_konten, PDO::PARAM_INT);
             $stmt->bindParam(':id_admin', $id_admin, PDO::PARAM_STR);
@@ -36,7 +35,7 @@ class SusunanKontenModel
     public function readAllSusunanKonten()
     {
         try {
-            $query = "SELECT * FROM susunan_konten";
+            $query = "EXEC sp_tampilkan_susunan_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             return ['success' => true, 'data' => $stmt->fetchAll(PDO::FETCH_ASSOC)];
@@ -49,7 +48,7 @@ class SusunanKontenModel
     public function readSusunanKontenById($id_susunan_konten)
     {
         try {
-            $query = "SELECT * FROM susunan_konten WHERE id_susunan_konten = :id_susunan_konten";
+            $query = "EXEC sp_tampilkan_per_susunan_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_susunan_konten', $id_susunan_konten, PDO::PARAM_INT);
             $stmt->execute();
@@ -69,9 +68,7 @@ class SusunanKontenModel
     public function updateSusunanKonten($id_susunan_konten, $id_konten, $id_admin, $isi_konten)
     {
         try {
-            $query = "UPDATE susunan_konten 
-                      SET id_konten = :id_konten, id_admin = :id_admin, isi_konten = :isi_konten 
-                      WHERE id_susunan_konten = :id_susunan_konten";
+            $query = "EXEC sp_edit_susunan_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_susunan_konten', $id_susunan_konten, PDO::PARAM_INT);
             $stmt->bindParam(':id_konten', $id_konten, PDO::PARAM_INT);
@@ -88,7 +85,7 @@ class SusunanKontenModel
     public function deleteSusunanKonten($id_susunan_konten)
     {
         try {
-            $query = "DELETE FROM susunan_konten WHERE id_susunan_konten = :id_susunan_konten";
+            $query = "EXEC sp_hapus_susunan_konten";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_susunan_konten', $id_susunan_konten, PDO::PARAM_INT);
             $stmt->execute();
