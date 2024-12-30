@@ -19,8 +19,7 @@ class AdminModel
     public function createAdmin($nama_admin, $username, $password, $no_telp, $role)
     {
         try {
-            $query = "INSERT INTO admin (nama_admin, username, password, no_telp, role) 
-                      VALUES (:nama_admin, :username, :password, :no_telp, :role)";
+            $query = "EXEC sp_tambah_admin";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nama_admin', $nama_admin);
             $stmt->bindParam(':username', $username);
@@ -37,7 +36,7 @@ class AdminModel
     public function readAllAdmin()
     {
         try {
-            $query = "SELECT * FROM admin";
+            $query = "EXEC sp_tampilkan_admin";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             return $stmt->fetchAll();
@@ -49,7 +48,7 @@ class AdminModel
     public function readAdminById($id_admin)
     {
         try {
-            $query = "SELECT * FROM admin WHERE id_admin = :id_admin";
+            $query = "EXEC sp_tampilkan_admin_berdasarkan_id";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_admin', $id_admin);
             $stmt->execute();
@@ -62,8 +61,7 @@ class AdminModel
     public function updateAdmin($id_admin, $nama_admin, $username, $no_telp)
     {
         try {
-            $query = "UPDATE admin SET nama_admin = :nama_admin, username = :username, no_telp = :no_telp 
-                      WHERE id_admin = :id_admin";
+            $query = "EXEC sp_edit_admin";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nama_admin', $nama_admin);
             $stmt->bindParam(':username', $username);
@@ -79,7 +77,7 @@ class AdminModel
     public function deleteAdmin($id_admin)
     {
         try {
-            $query = "DELETE FROM admin WHERE id_admin = :id_admin";
+            $query = "EXEC sp_hapus_admin";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_admin', $id_admin);
             $stmt->execute();
@@ -94,7 +92,7 @@ class AdminModel
         try {
             $pdo = getPDOConnection();
 
-            $stmt = $pdo->prepare("SELECT * FROM admin WHERE username = :username");
+            $stmt = $pdo->prepare("EXEC sp_login_admin");
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->execute();
 

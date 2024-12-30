@@ -22,13 +22,11 @@ class StatusTanggunganModel
         $id_admin,
         $status,
         $tanggal_pengecekan,
-        $status_pengajuan,
+        $status_pengajuan, //  kolom ini dihapus saja
         $catatan_admin
     ) {
         try {
-            $query = "INSERT INTO status_tanggungan 
-                      (id_mahasiswa, id_unggah, id_admin, status, tanggal_pengecekan, status_pengajuan, catatan_admin) 
-                      VALUES (:id_mahasiswa, :id_unggah, :id_admin, :status, :tanggal_pengecekan, :status_pengajuan, :catatan_admin)";
+            $query = "EXEC sp_tambah_status_tanggungan";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_mahasiswa', $id_mahasiswa);
             $stmt->bindParam(':id_unggah', $id_unggah);
@@ -48,7 +46,7 @@ class StatusTanggunganModel
     public function readStatusTanggungan()
     {
         try {
-            $query = "SELECT * FROM status_tanggungan";
+            $query = "EXEC sp_tampilkan_status_tanggungan";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             $statusTanggungan = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -67,7 +65,7 @@ class StatusTanggunganModel
     public function readStatusTanggunganById($id_status)
     {
         try {
-            $query = "SELECT * FROM status_tanggungan WHERE id_status = :id_status";
+            $query = "EXEC sp_tampilkan_per_status_tanggungan";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_status', $id_status);
             $stmt->execute();
@@ -87,7 +85,7 @@ class StatusTanggunganModel
     public function readStatusTanggunganByNim($nim)
     {
         try {
-            $query = "SELECT * FROM status_tanggungan WHERE nim = :nim";
+            $query = "EXEC sp_tampilkan_nim_status_tanggungan";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nim', $nim);
             $stmt->execute();
@@ -115,11 +113,7 @@ class StatusTanggunganModel
         $catatan_admin
     ) {
         try {
-            $query = "UPDATE status_tanggungan 
-                      SET id_mahasiswa = :id_mahasiswa, id_unggah = :id_unggah, id_admin = :id_admin, 
-                          status = :status, tanggal_pengecekan = :tanggal_pengecekan, 
-                          status_pengajuan = :status_pengajuan, catatan_admin = :catatan_admin 
-                      WHERE id_status = :id_status";
+            $query = "EXEC sp_edit_status_tanggungan";
 
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_mahasiswa', $id_mahasiswa);

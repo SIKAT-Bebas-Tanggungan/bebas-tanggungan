@@ -18,8 +18,7 @@ class MahasiswaModel
     public function createMahasiswa($nim, $nama_mahasiswa, $prodi, $angkatan)
     {
         try {
-            $query = "INSERT INTO mahasiswa (nim, nama_mahasiswa, prodi, password, angkatan) 
-                      VALUES (:nim, :nama_mahasiswa, :prodi, :password, :angkatan)";
+            $query = "EXEC sp_tambah_mahasiswa";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nim', $nim);
             $stmt->bindParam(':nama_mahasiswa', $nama_mahasiswa);
@@ -36,7 +35,7 @@ class MahasiswaModel
     public function readAllMahasiswa()
     {
         try {
-            $query = "SELECT * FROM mahasiswa";
+            $query = "EXEC sp_tampilkan_mahasiswa";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -48,7 +47,7 @@ class MahasiswaModel
     public function readMahasiswaByNim($nim)
     {
         try {
-            $query = "SELECT * FROM mahasiswa WHERE nim = :nim";
+            $query = "EXEC sp_tampilkan_mahasiswa_berdasarkan_nim";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nim', $nim);
             $stmt->execute();
@@ -61,7 +60,7 @@ class MahasiswaModel
     public function readMahasiswaByProdi($prodi)
     {
         try {
-            $query = "SELECT * FROM mahasiswa WHERE prodi = :prodi";
+            $query = "EXEC sp_tampilkan_prodi_mahasiswa";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':prodi', $prodi);
             $stmt->execute();
@@ -75,19 +74,10 @@ class MahasiswaModel
     {
         try {
             // Prepare the query based on the role
-            $query = "UPDATE mahasiswa 
-                  SET nama_mahasiswa = :nama_mahasiswa, 
-                      prodi = :prodi, 
-                      angkatan = :angkatan 
-                  WHERE nim = :nim";
+            $query = "EXEC sp_edit_mahasiswa";
 
             if ($role !== 'mahasiswa') {
-                $query = "UPDATE mahasiswa 
-                      SET nama_mahasiswa = :nama_mahasiswa, 
-                          prodi = :prodi, 
-                          password = :password, 
-                          angkatan = :angkatan 
-                      WHERE nim = :nim";
+                $query = "EXEC sp_edit_biodata_mahasiswa";
             }
 
             $stmt = $this->pdo->prepare($query);
@@ -116,7 +106,7 @@ class MahasiswaModel
     public function deleteMahasiswa($nim)
     {
         try {
-            $query = "DELETE FROM mahasiswa WHERE nim = :nim";
+            $query = "EXEC sp_hapus_mahasiswa";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nim', $nim);
             $stmt->execute();
@@ -131,7 +121,7 @@ class MahasiswaModel
         try {
             $pdo = getPDOConnection();
 
-            $stmt = $pdo->prepare("SELECT password FROM mahasiswa WHERE nim = :nim");
+            $stmt = $pdo->prepare("EXEC sp_login_mahasiswa");
             $stmt->bindParam(':nim', $nim, PDO::PARAM_STR);
             $stmt->execute();
 

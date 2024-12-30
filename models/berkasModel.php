@@ -19,7 +19,7 @@ class BerkasModel
     public function createBerkas($nama_berkas)
     {
         try {
-            $query = "INSERT INTO berkas (nama_berkas) VALUES (:nama_berkas)";
+            $query = "EXEC sp_tambah_berkas";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nama_berkas', $nama_berkas, PDO::PARAM_STR);
             $stmt->execute();
@@ -33,7 +33,7 @@ class BerkasModel
     public function readAllBerkas()
     {
         try {
-            $query = "SELECT * FROM berkas";
+            $query = "EXEC sp_tampilkan_berkas";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
             return ['success' => true, 'data' => $stmt->fetchAll(PDO::FETCH_ASSOC)];
@@ -46,7 +46,7 @@ class BerkasModel
     public function readBerkasById($id_berkas)
     {
         try {
-            $query = "SELECT * FROM berkas WHERE id_berkas = :id_berkas";
+            $query = "EXEC sp_tampilkan_per_berkas";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_berkas', $id_berkas, PDO::PARAM_INT);
             $stmt->execute();
@@ -66,7 +66,7 @@ class BerkasModel
     public function updateBerkas($id_berkas, $nama_berkas)
     {
         try {
-            $query = "UPDATE berkas SET nama_berkas = :nama_berkas WHERE id_berkas = :id_berkas";
+            $query = "EXEC sp_edit_berkas";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':nama_berkas', $nama_berkas, PDO::PARAM_STR);
             $stmt->bindParam(':id_berkas', $id_berkas, PDO::PARAM_INT);
@@ -81,7 +81,7 @@ class BerkasModel
     public function deleteBerkas($id_berkas)
     {
         try {
-            $query = "DELETE FROM berkas WHERE id_berkas = :id_berkas";
+            $query = "EXEC sp_hapus_berkas";
             $stmt = $this->pdo->prepare($query);
             $stmt->bindParam(':id_berkas', $id_berkas, PDO::PARAM_INT);
             $stmt->execute();
