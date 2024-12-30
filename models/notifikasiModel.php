@@ -43,9 +43,9 @@ class NotifikasiModel
             $notifikasi = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if ($notifikasi) {
-                return ['success' => true, 'data' => $notifikasi];
+                return $notifikasi;
             } else {
-                return ['success' => false, 'message' => 'No notifications found.'];
+                return [];
             }
         } catch (PDOException $e) {
             return ['success' => false, 'message' => $e->getMessage()];

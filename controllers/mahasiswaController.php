@@ -2,6 +2,7 @@
 require_once 'models/mahasiswaModel.php';
 require_once 'models/statusTanggunganModel.php';
 require_once 'models/unggahBerkas.php';
+require_once 'models/notifikasiModel.php';
 require_once 'middleware/sessionMahasiswa.php';
 
 class MahasiswaController
@@ -9,12 +10,14 @@ class MahasiswaController
     private $mahasiswaModel;
     private $statusTanggunganModel;
     private $unggahBerkasModel;
+    private $notifikasiModel;
 
     public function __construct()
     {
         $this->mahasiswaModel = new MahasiswaModel();
         $this->statusTanggunganModel = new StatusTanggunganModel();
         $this->unggahBerkasModel = new UnggahBerkasModel();
+        $this->notifikasiModel = new NotifikasiModel();
     }
 
     public function login()
@@ -57,7 +60,8 @@ class MahasiswaController
 
         $nim = $_SESSION['nim'];
         $mahasiswa = $this->mahasiswaModel->readMahasiswaByNim($nim);
-
+        $notifikasiList = $this->notifikasiModel->readNotifikasi($nim);        
+        
         require_once 'views/mahasiswa/dashboardMhs.php';
     }
 
@@ -68,6 +72,7 @@ class MahasiswaController
         $nim = $_SESSION['nim'];
         $role = $_SESSION['role'];
         $mahasiswa = $this->mahasiswaModel->readMahasiswaByNim($nim);
+        $notifikasiList = $this->notifikasiModel->readNotifikasi($nim);
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $role = $_SESSION['role'];
